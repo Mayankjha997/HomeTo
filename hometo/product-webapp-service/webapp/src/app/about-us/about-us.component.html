@@ -1,0 +1,39 @@
+<section class="about-section">
+    <div class="container">
+      <h2>About Us</h2>
+      <p>Welcome to Hometo, your premier destination for all things related to properties. Whether you're a seasoned investor, a first-time buyer, or simply looking to explore the world of real estate, we're here to provide you with a seamless online platform to make your property journey a success. At Hometo, we're more than just a website – we're your trusted partner in the exciting and dynamic realm of properties. Our team is passionate about connecting buyers, sellers, renters and landlords with lucrative opportunities. With a commitment to excellence, we're here to ensure you achieve your property goals with confidence.</p>
+    </div>
+</section>
+
+<section class="meet-our-team-section">
+    <div class="container">
+      <h2>Meet Our Team!</h2>
+      <div class="team-members">
+        <div class="team-member" *ngFor="let member of teamMembers">
+            <img [src]="member.avatarUrl" alt="{{ member.name }}" />
+            <h3>{{ member.name }}</h3>
+            <p>{{ member.position }}</p>
+            <p>{{ member.company }}</p>
+            <div class="social-links">
+                <a *ngIf="member.linkedIn" [href]="member.linkedIn" target="_blank" rel="noopener noreferrer">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+                <a *ngIf="member.instagram" [href]="member.instagram" target="_blank" rel="noopener noreferrer">
+                    <i class="fab fa-instagram"></i>
+                </a>
+            </div>
+        </div>   
+      </div>
+    </div>
+</section>
+
+<section class="contact-us-section">
+    <div class="container">
+      <h2>Contact Us</h2>
+      <p>We'd love to hear from you. Feel free to get in touch!</p>
+      <div class="contact-form">
+        <a href="mailto:hometo.notification@gmail.com"><button mat-raised-button class="mail-button">Mail Us</button></a>
+      </div>
+    </div>
+</section>
+  

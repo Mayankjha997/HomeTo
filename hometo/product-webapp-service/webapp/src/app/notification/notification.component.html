@@ -1,0 +1,51 @@
+<!-- <mat-accordion class="accordion">
+  <mat-expansion-panel hideToggle class="panel">
+    <mat-expansion-panel-header>
+      <mat-panel-description>
+        <mat-icon>notifications</mat-icon>
+      </mat-panel-description>
+    </mat-expansion-panel-header>
+    <div *ngFor="let m of messages" >
+        <mat-card class="panel-description">
+          <h3 style="color: white">Booking ID:{{m.recipientId}}</h3>
+          <mat-card-content style="color: white">
+            <h3>{{m.msgToRecipient}}</h3>
+            <h3>"{{m.msgToSender}}"</h3>
+          </mat-card-content>
+        </mat-card>
+        <br>
+        </div> 
+  </mat-expansion-panel>
+</mat-accordion> 
+    -->
+
+    <div *ngFor="let m of messages">
+        <mat-expansion-panel hideToggle class="panel">
+            <mat-expansion-panel-header>
+              <mat-panel-title>
+                <h3>{{m.msgToRecipient}}</h3>
+              </mat-panel-title>
+              <!-- <mat-panel-description>
+                Add a Note
+              </mat-panel-description> -->
+            </mat-expansion-panel-header>
+            <mat-card class="panel-description">
+              <mat-card-content style="color: white">
+                <h3>Booking ID:{{m.recipientId}}</h3>
+              <h3>"{{m.msgToSender}}"</h3>
+              </mat-card-content>
+            </mat-card>
+        </mat-expansion-panel>
+        <br>
+      </div>
+      
+      <!-- <div class="form">
+        <form (ngSubmit)="onSubmit()" #frm="ngForm" >
+            <input type="text" name="subject" [(ngModel)]="message.msgToRecipient" placeholder="subject">
+            <input type="text" name="body" [(ngModel)]="message.msgToSender" placeholder="body">
+            <button type="button" mat-raised-button color="primary" (click)="onSubmit()">Submit</button>
+        </form>
+      </div> -->
+      
+      
+        

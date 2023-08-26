@@ -1,0 +1,141 @@
+/* .form-container {
+  text-align: center;
+  margin-top: 20px;
+  }
+
+ h1{
+  text-align: center;
+  font-family:"Times New Roman", Times, serif;
+ }
+  .row{ */
+    /* margin-top: 10px; */
+    /* display: flex;
+    gap: 10px;
+  }
+
+  form{
+    border-radius: 1%;
+    background-color: #e8e2e4;
+    margin: 20px;
+    border: black;
+  }
+
+  button{
+    margin-left: 310px;
+    margin-bottom: 10px;
+  }
+  .profile-image{
+    margin-left: 41%;
+    align-items: center;
+    
+  }
+  .profdata{
+    margin-top: 5px;
+    margin-left: 23px;
+    text-align:center
+  }
+
+  .rowf{
+    display: flex;
+    gap: 5px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  } */
+
+
+.profile {
+  display: flex;
+}
+
+.user-details {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: lightgreen;
+  padding: 40px;
+  border-radius: 8px;
+  border: 1px solid #3BBF44;
+}
+
+.user-details i{
+  font-size: 56px;
+}
+
+.user {
+  display: flex;
+  flex-direction: column;
+}
+
+.user i{
+  font-size: 16px;
+  margin-right: 5px;
+}
+
+.edit-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.edit-form p{
+  font-size: 20px;
+  font-weight: 500;
+  padding: 10px;
+}
+
+.update-form {
+  margin: 0 auto;
+  padding: 0 20px;
+  max-width: 100%;
+}
+
+.form-row {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  margin: 10px;
+}
+
+.error-message {
+  color: #007bff;
+  font-size: 12px;
+}
+
+.row-data {
+  margin: 0 20px;
+  width: 100%;
+}
+
+.cancel-button {
+  border: 1px solid transparent;
+  color: red;
+}
+
+.cancel-button:hover {
+  border:1px solid red;
+  color: white;
+  background-color: red;
+}
+
+.save-cancel-buttons {
+  display: flex;
+  align-items: flex-end;
+  gap: 20px;
+}
+
+.save-changes {
+  border: 1px solid #3BBF44;
+  color: #3BBF44;
+}
+
+.save-changes:disabled {
+  color: grey;
+  border-color: transparent;
+}
+
+.save-changes:hover {
+  background-color: #3BBF44;
+  color: white;
+}

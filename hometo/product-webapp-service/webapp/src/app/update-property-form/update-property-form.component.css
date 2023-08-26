@@ -1,0 +1,65 @@
+.update-form-title {
+    background-color: #93E2A9;
+    /* color: #3BBF44; */
+}
+
+.update-form {
+    margin: 0 auto;
+    padding: 0 20px;
+    max-width: 100%;
+}
+
+.form-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 10px;
+}
+
+.row-data {
+    margin: 0 20px;
+    width: 100%;
+}
+
+.error-message {
+    color: #007bff;
+    font-size: 12px;
+  }
+
+.update-action-buttons {
+    display: flex;
+    justify-content: flex-end;
+    margin: 0 10px;
+}
+
+.cancel-button {
+    border: 1px solid transparent;
+    color: red;
+}
+
+.cancel-button:hover {
+    border:1px solid red;
+    color: white;
+    background-color: red;
+}
+
+.save-button {
+    border: 1px solid #3BBF44;
+    color: #3BBF44;
+}
+
+.save-button:disabled {
+    color: grey;
+    border-color: transparent;
+}
+
+.save-button:hover {
+    background-color: #3BBF44;
+    color: black;
+}
+
+@media screen and (max-width: 768px) {
+    .form-row {
+        flex-direction: column;
+    }
+}

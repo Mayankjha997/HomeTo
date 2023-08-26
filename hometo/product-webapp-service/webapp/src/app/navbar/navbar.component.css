@@ -1,0 +1,19 @@
+
+.header2{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+    padding: 10px 20px;
+  }
+
+  .header-left a{
+    /* float: left; */
+    margin-right: 8vh;
+    color: #000000;
+    text-decoration: none;
+  }
+
+.header-right{
+display: flex;
+  }

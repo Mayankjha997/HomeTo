@@ -1,0 +1,62 @@
+.add-form-title {
+  background-color: #92E3A9;
+}
+
+mat-dialog-content {
+  background-color: #92E3A9;
+}
+
+.add-form {
+  margin: 0 auto;
+  padding: 0 20px;
+  max-width: 100%;
+}
+
+.form-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 10px;
+}
+
+.row-data {
+  margin: 0 20px;
+  width: 100%;
+}
+
+.error-message {
+  color: #007bff;
+  font-size: 12px;
+}
+
+.add-action-buttons {
+  display: flex;
+  justify-content: flex-end;
+  margin: 0 10px;
+}
+
+.cancel-button {
+  border: 1px solid transparent;
+  color: red;
+}
+
+.cancel-button:hover {
+  border:1px solid red;
+  color: white;
+  background-color: red;
+}
+
+.add-button {
+  border: 2px solid #3BBF44;
+  color: #3BBF44;
+}
+
+.add-button:disabled {
+  color: grey;
+  border-color: transparent;
+}
+
+.add-button:hover {
+  background-color: #3BBF44;
+  color: black;
+}

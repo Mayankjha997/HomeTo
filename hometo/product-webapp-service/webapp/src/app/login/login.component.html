@@ -1,0 +1,115 @@
+<!-- <div mat-dialog-title>
+    <h1>Login Form</h1>
+</div>
+
+<form [formGroup]="loginform" (ngSubmit)="onFormSubmit()">
+ 
+    <div class="row">
+      <mat-form-field appearance="outline">
+        <mat-label>email</mat-label>
+        <input matInput type="text" placeholder="email" formControlName="email">
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>Password</mat-label>
+        <input matInput type="text" placeholder="password" formControlName="password">
+      </mat-form-field>
+    </div>
+    
+
+<div mat-dialog-actions>
+    <button mat-raised-button type="submit">submit</button>
+</div>
+</form> -->
+
+
+<!-- <div mat-dialog-title>
+    <h1>Login</h1>
+</div>
+
+<form [formGroup]="loginform" (ngSubmit)="onFormSubmit()">
+ 
+    <div class="row">
+        <mat-form-field appearance="outline">
+        <mat-label>email</mat-label>
+        <input matInput type="text" placeholder="email" formControlName="email">
+      </mat-form-field>
+    </div>
+    <div class="row2">
+      <mat-form-field appearance="outline">
+        <mat-label>Password</mat-label>
+        <input matInput type="text" placeholder="password" formControlName="password">
+      </mat-form-field>
+
+    </div>
+    
+<div mat-dialog-actions>
+    <button mat-raised-button type="submit" [disabled]="loginform.invalid">submit</button>
+</div>
+</form> -->
+
+<!-- <div class="login-container">
+  <div class="login-image-container">
+    <div>
+    <img src="../../assets/login.png">
+    </div>  
+  </div>
+  <div class="card">
+    <div class="card-body">
+      <h2 class="logo-title">WELCOME</h2>
+
+      <form (ngSubmit)="onLogin()" method="get" class="form-container">
+        <div class="form-group">
+          <label for="email">EMAIL :</label>
+          <input type="text" id="email" name="email" [(ngModel)]="user.email" class="form-control" required>
+        </div>
+        <div class="form-group">
+          <label for="password">PASSWORD :</label>
+          <input type="password" id="password" name="password" [(ngModel)]="user.password" class="form-control" required>
+        </div>
+        <button type="submit" class="btn btn-primary">Login</button>
+      </form>
+
+      <p class="register-link">New User? <a routerLink="/registrartion">Register</a></p>
+    </div>
+  </div>
+</div> -->
+
+
+<div class="login-cont">
+  <div class="image-cont">
+    <img src="../../assets/login.png">
+  </div>
+  <div class="login-form">
+    <div class="welcome">
+      WELCOME BACK
+    </div>
+    <div class="login">
+      Sign in
+    </div>
+    <div class="form-cont">
+      <form (ngSubmit)="onLogin()" method="get" #loginForm="ngForm">
+        <div class="form-item">
+          <!-- <label for="email">EMAIL :</label> -->
+          <input placeholder="Enter email" type="text" id="email" name="email" [(ngModel)]="user.email" #email="ngModel" required pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$">
+          <div *ngIf="email.invalid && (email.dirty || email.touched)" class="error-message">
+            <div *ngIf="email.errors?.['required']">*Email is required</div>
+            <div *ngIf="email.errors?.['pattern']">*Invalid email format</div>
+          </div>
+        </div>
+        <div class="form-item">
+          <!-- <label for="password">PASSWORD :</label> -->
+          <input placeholder="Enter password" type="password" id="password" name="password" [(ngModel)]="user.password" #password="ngModel" required>
+          <div *ngIf="password.invalid && (password.dirty || password.touched)" class="error-message">
+            <div *ngIf="password.errors?.['required']">*Password is required</div>
+          </div>
+        </div>
+        <div class="form-item">
+          <button type="submit" class="btn btn-primary" [disabled]="loginForm.invalid">Sign in</button>
+        </div>
+        <div class="form-item">
+          <p class="register-link">New User? <a routerLink="/registrartion">Sign up</a></p>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

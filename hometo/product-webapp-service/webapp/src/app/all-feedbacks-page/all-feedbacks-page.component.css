@@ -1,0 +1,91 @@
+.feedback-heading{
+    padding: 20px 0;
+    border-bottom: 1px solid #3BBF44;
+  }
+  
+  .heading-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .heading-container h2 {
+    font-size: 24px;
+    margin-right: 10px;
+  }
+
+  .feedback-container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .feedback-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px;
+  }
+
+  .feedback {
+    display: flex;
+    flex-direction: column;
+    border: 2px solid #3BBF44;
+    background-color: #92E3A9;
+    border-radius: 8px;
+    padding: 20px;
+  }
+
+  .details-rating {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .user-details {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .name {
+    font-size: 16px;
+    font-weight: 500;
+    /* color: #3BBF44; */
+  }
+
+  .email {
+    font-size: 16px;
+    font-weight: 400;
+    /* color: #3BBF44; */
+  }
+
+  .feedback-icon {
+    font-size: 20px;
+    margin-right: 10px;
+  }
+
+  .stars {
+    display: flex;
+    font-size: 24px;
+  }
+
+  .comment {
+    
+  }
+
+  .filled-star {
+    color: rgb(255, 98, 0);
+  }
+
+  .empty-star {
+    color: rgb(255, 98, 0);
+  }
+
+  @media screen and  (max-width: 768px) {
+
+    .property-heading h2 {
+      font-size: 20px;
+    }
+  
+  }
+  

@@ -1,0 +1,65 @@
+<div class="menu-bar">
+  <div class="menu-options">
+    <button mat-button (click)="openHome()">Home</button>
+    <button mat-button [matMenuTriggerFor]="AboutUsMenu">
+      About Us
+      <mat-icon iconPositionEnd>arrow_drop_down</mat-icon>
+    </button>
+    <mat-menu #AboutUsMenu="matMenu" yPosition="below">
+      <button class="custom-menu-item" mat-menu-item (click)="openAboutUs()">Meet Our Team</button>
+    </mat-menu>
+
+    <button mat-button [matMenuTriggerFor]="PropertiesMenu">
+      Properties
+      <mat-icon iconPositionEnd>arrow_drop_down</mat-icon>
+    </button>
+    <mat-menu #PropertiesMenu="matMenu" yPosition="below">
+      <button class="custom-menu-item" mat-menu-item (click)="openApartments()">Apartments</button>
+      <button class="custom-menu-item" mat-menu-item (click)="openBungalows()">Bungalows</button>
+      <button class="custom-menu-item" mat-menu-item (click)="openHouses()">Houses</button>
+      <button class="custom-menu-item" mat-menu-item (click)="openFlats()">Flats</button>
+      <button class="custom-menu-item" mat-menu-item (click)="openPlots()">Plots</button>
+      <button class="custom-menu-item" mat-menu-item (click)="openProperties()">All Properties</button>
+    </mat-menu>
+
+    <button mat-button [matMenuTriggerFor]="BookingsMenu">
+      Bookings
+      <mat-icon iconPositionEnd>arrow_drop_down</mat-icon>
+    </button>
+    <mat-menu #BookingsMenu="matMenu" yPosition="below">
+      <button *ngIf="userRole()" class="custom-menu-item" mat-menu-item (click)="openPropertyBookings()">Property Bookings</button>
+      <button *ngIf="!userRole()" class="custom-menu-item" mat-menu-item (click)="openPropertyBookings()">My Bookings</button>
+      <!-- <button class="custom-menu-item" mat-menu-item>Visit Bookings</button> -->
+    </mat-menu>
+
+    <!-- <button mat-button [matMenuTriggerFor]="PaymentsMenu">
+      Payments
+      <mat-icon iconPositionEnd>arrow_drop_down</mat-icon>
+    </button>
+    <mat-menu #PaymentsMenu="matMenu" yPosition="below">
+      <button class="custom-menu-item" mat-menu-item>Payment History</button>
+    </mat-menu> -->
+
+    <!-- <button mat-button (click)="openNotification()">Notifications</button> -->
+  </div>
+  <div class="cart-chat-button">
+    <button mat-button (click)="openChatDialog()">
+            <mat-icon>android</mat-icon>
+            <span>Chat</span>
+          </button>
+  </div>
+    
+    
+    
+    
+          <!-- <button mat-button>
+      <mat-icon>android</mat-icon>
+      <span>Chat</span>
+    </button>
+    <button mat-button>
+      <mat-icon>shopping_cart</mat-icon>
+      <span>Cart</span>
+    </button> -->
+  <!-- </div> -->
+</div>
+

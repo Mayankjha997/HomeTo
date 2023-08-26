@@ -1,0 +1,19 @@
+.panel{
+    margin-left: 5%;
+    margin-right: 5%;
+}
+.panel-description{
+    background-color: rgb(49, 48, 48);
+}
+h3{
+    margin: 10px;
+}
+.accordion {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+.form{
+    width: 70%;
+    margin: auto;
+}

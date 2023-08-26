@@ -1,0 +1,60 @@
+<div>
+<div mat-dialog-content class="profile">
+  <div class="user-details">
+    <i class="fa-solid fa-circle-user"></i>
+    <p>{{userDetails.name}}</p>
+    <div class='user'>
+      <p><i class="fa-solid fa-at"></i>{{userDetails.email}}</p>
+      <p><i class="fa-solid fa-address-card"></i>{{userDetails.role}}</p>
+      <p><i class="fa-solid fa-phone"></i>{{userDetails.phoneNumber}}</p>
+    </div>
+  </div>
+  <div class="edit-form">
+    <p>Edit Your Details</p>
+    <form class="update-form" [formGroup]="updateProfileForm" *ngIf="updateProfileForm">
+      <div class="form-row">  
+        <mat-form-field class="row-data" appearance="outline" floatLabel="always">
+          <mat-label>Name</mat-label>
+          <input matInput type='text' placeholder="Enter Full Name" formControlName="name">
+          <div *ngIf="updateProfileForm.controls['name'].invalid && (updateProfileForm.controls['name'].dirty || updateProfileForm.controls['name'].touched)" class="error-message">
+            <div *ngIf="updateProfileForm.controls['name'].errors?.['required']">*Name is required</div>
+          </div>
+        </mat-form-field>
+    
+      </div>
+      <div class="form-row">
+        <mat-form-field class="row-data" appearance="outline" floatLabel="always">
+          <mat-label>Phone</mat-label>
+          <input matInput placeholder="Enter Phone No." formControlName="phoneNumber">
+          <div *ngIf="updateProfileForm.controls['phoneNumber'].invalid && (updateProfileForm.controls['phoneNumber'].dirty || updateProfileForm.controls['phoneNumber'].touched)" class="error-message">
+            <div *ngIf="updateProfileForm.controls['phoneNumber'].errors?.['required']">*Phone number is required</div>
+            <div *ngIf="updateProfileForm.controls['phoneNumber'].errors?.['pattern']">*Invalid format (10 digits only)</div>
+          </div>
+        </mat-form-field>
+      </div>
+      <div class="form-row">
+        <mat-form-field class="row-data" appearance="outline" floatLabel="always">
+          <mat-label>Password</mat-label>
+          <input type="password" matInput placeholder="Enter Password" formControlName="password">
+          <div *ngIf="updateProfileForm.controls['password'].invalid && (updateProfileForm.controls['password'].dirty || updateProfileForm.controls['password'].touched)" class="error-message">
+            <div *ngIf="updateProfileForm.controls['password'].errors?.['required']">*Password is required</div>
+            <div *ngIf="updateProfileForm.controls['password'].errors?.['minlength']">*At least 6 characters required</div>
+          </div>
+        </mat-form-field>
+        <mat-form-field class="row-data" appearance="outline" floatLabel="always">
+          <mat-label>Confirm Password</mat-label>
+          <input type="password" matInput placeholder="Re-enter Password" formControlName="confirmPassword">
+          <div *ngIf="updateProfileForm.controls['confirmPassword'].invalid && (updateProfileForm.controls['confirmPassword'].dirty || updateProfileForm.controls['confirmPassword'].touched)" class="error-message">
+            <div *ngIf="updateProfileForm.controls['confirmPassword'].errors?.['required']">*Confirm password is required</div>
+            <div *ngIf="updateProfileForm.controls['confirmPassword'].errors?.['pattern']">*Password do not match</div>
+          </div>
+        </mat-form-field>
+      </div>
+    </form>
+    <div class="save-cancel-buttons">
+      <button class="cancel-button" mat-button (click)="onNoClick()">Cancel</button>
+      <button class="save-changes" mat-button (click)="onSubmit()" [disabled]="!updateProfileForm.valid">Save Changes</button>
+    </div>
+  </div>
+</div>
+</div>

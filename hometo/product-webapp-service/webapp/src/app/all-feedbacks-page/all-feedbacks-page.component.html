@@ -1,0 +1,31 @@
+<div class="feedback-heading">
+    <div class="heading-container">
+        <h2>Customer Feedbacks</h2>
+    </div> 
+</div>
+
+<div class="feedback-container">
+    <div class="feedback-list">
+        <div class="feedback" *ngFor="let feedback of feedbackList">
+            <div class="details-rating">
+                <div class="user-details">
+                    <p class="name"><i class="fa-solid fa-circle-user feedback-icon"></i>{{feedback.name}}</p>
+                    <p class="email"><i class="fa-solid fa-at feedback-icon"></i>{{feedback.custemail}}</p>
+                </div>
+                <div class="stars">
+                    <div class="filled-star" *ngFor="let i of createRange1(feedback.rating)">
+                        <i class="fa-solid fa-star"></i>
+                    </div>
+                    <div class="empty-star" *ngFor="let i of createRange2(feedback.rating)">
+                        <i class="fa-regular fa-star"></i>
+                    </div>
+                </div>
+            </div>
+
+            <div class="feedback-item comment">
+                <p><i class="fa-regular fa-message feedback-icon"></i>{{feedback.comments}}</p>
+            </div>
+        
+        </div>
+    </div>
+</div>

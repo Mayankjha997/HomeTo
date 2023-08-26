@@ -1,0 +1,170 @@
+version: "3"
+services:
+
+  eureka-server:
+    build: eureka-server/
+    container_name: eureka-server
+    ports:
+      - "8761:8761"
+  api-gateway:
+    build: api-gateway/
+    container_name: api-gateway
+    links:
+      - eureka-server
+    environment:
+      - eureka.client.service-url.defaultZone=http://eureka-server:8761/eureka/
+    ports:
+      - "8080:8080"
+  rabbitmq:
+    container_name: rabbitmq
+    image: rabbitmq:3-management
+    ports:
+      - "5672:5672"
+      - "15672:15672"
+    environment:
+      AMQP_URL: 'amqp://rabbitmq?connection_attempts=5&retry_delay=5'
+      RABBITMQ_DEFAULT_USER: "guest"
+      RABBITMQ_DEFAULT_PASS: "guest"
+
+  mysql:
+    image: mysql:latest
+    ports:
+      - "3307:3307"
+    container_name: mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_USERNAME: root
+      MYSQL_PASSWORD: root
+      MYSQL_ALLOW_EMPTY_PASSWORD: "yes"
+
+  mongodb:
+    image: mongo:latest
+    container_name: mongodb
+    ports:
+      - "27017-27017"
+
+  authentication-service:
+    build: authentication-service/
+    container_name: authentication-service
+    ports:
+      - "1001:1001"
+    links:
+      - eureka-server
+    environment:
+      - eureka.client.service-url.defaultZone=http://eureka-server:8761/eureka/
+    depends_on:
+      - mysql
+      - api-gateway
+
+  booking-service:
+    build: booking-service/
+    container_name: booking-service
+    ports:
+      - "1002:1002"
+    links:
+      - eureka-server
+    environment:
+      - eureka.client.service-url.defaultZone=http://eureka-server:8761/eureka/
+    depends_on:
+      - mongodb
+      - api-gateway
+      - rabbitmq
+
+  buyer-service:
+    build: buyer-service/
+    container_name: buyer-service
+    ports:
+      - "1003:1003"
+    links:
+      - eureka-server
+    environment:
+      - eureka.client.service-url.defaultZone=http://eureka-server:8761/eureka/
+    depends_on:
+      - mongodb
+      - api-gateway
+      - rabbitmq
+
+  feedback-service:
+    build: feedback-service/
+    container_name: feedback-service
+    ports:
+      - "1004:1004"
+    links:
+      - eureka-server
+    environment:
+      - eureka.client.service-url.defaultZone=http://eureka-server:8761/eureka/
+    depends_on:
+      - mongodb
+      - api-gateway
+      - rabbitmq
+
+  notification-service:
+    build: notification-service/
+    container_name: notification-service
+    ports:
+      - "1005:1005"
+    links:
+      - eureka-server
+    environment:
+      - eureka.client.service-url.defaultZone=http://eureka-server:8761/eureka/
+    depends_on:
+      - mongodb
+      - api-gateway
+      - rabbitmq
+
+  owner-service:
+    build: owner-service/
+    container_name: owner-service
+    ports:
+      - "1006:1006"
+    links:
+      - eureka-server
+    environment:
+      - eureka.client.service-url.defaultZone=http://eureka-server:8761/eureka/
+    depends_on:
+      - mongodb
+      - api-gateway
+      - rabbitmq
+
+  payment-service:
+    build: payment-service/
+    container_name: payment-service
+    ports:
+      - "1007:1007"
+    links:
+      - eureka-server
+    environment:
+      - eureka.client.service-url.defaultZone=http://eureka-server:8761/eureka/
+    depends_on:
+      - mysql
+      - api-gateway
+      - rabbitmq
+
+  property-service:
+    build: property-service/
+    container_name: property-service
+    ports:
+      - "1008:1008"
+    links:
+      - eureka-server
+    environment:
+      - eureka.client.service-url.defaultZone=http://eureka-server:8761/eureka/
+    depends_on:
+      - mongodb
+      - api-gateway
+      - rabbitmq
+
+  product-webapp-service:
+    build: product-webapp-service/
+    image: product-webapp-service
+    links:
+      - eureka-server
+    environment:
+      - eureka.client.service-url.defaultZone=http://eureka-server:8761/eureka/
+    depends_on:
+      - api-gateway
+    container_name: product-webapp-service
+    ports:
+      - "1009:1009"
+
+

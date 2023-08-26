@@ -1,0 +1,38 @@
+<div class="property-heading">
+  <div class="heading-container">
+    <h2> All Properties</h2>
+    <button *ngIf="userRole()" mat-raised-button class="add-button" (click)="openAddPropertyForm()">
+      <mat-icon>add</mat-icon>
+      Add new property
+    </button>
+  </div> 
+</div>
+
+<div class="property-list-section">
+  <div class="container">
+    <div class="property-cards">
+      <div class="property-card" *ngFor="let property of properties">
+        <img src="assets/img1.jpeg" alt="Property Image" />
+        <div class="property-card-content">
+          <h3>{{property.propertyName}}</h3>
+          <div class="content">
+            <p><i class="fas fa-building"></i>{{property.propertyType}}</p>
+            <p><i class="fa fa-inr"></i>{{property.price}}</p>
+          </div>
+          
+          <div class="property-card-action-buttons" >
+            <button mat-raised-button class="view-button" (click)="openViewPropertyComponent(property,property.propertyID)">View >></button>
+            <button *ngIf="userRole()" class="custom-menu" mat-icon-button [matMenuTriggerFor]="menu">
+              <mat-icon>more_vert</mat-icon>
+            </button>
+            <mat-menu #menu="matMenu">
+              <button class="custom-menu-item" mat-menu-item (click)="openUpdatePropertyForm(property)">Edit</button>
+              <button class="custom-menu-item" mat-menu-item (click)="delete(property.propertyID)">Delete</button>
+              <!-- <button *ngIf="!userRole()" class="custom-menu-item" mat-menu-item >Add to Cart</button> -->
+            </mat-menu>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,140 @@
+<!-- <div mat-dialog-title>
+    <h1>Booking Form</h1>
+</div>
+
+<form [formGroup]="bookform" (ngSubmit)="onFormSubmit()">
+<div mat-dialog-content class="form-container">
+    <div class="row">
+      <mat-form-field appearance="outline">
+        <mat-label>Flat_Id</mat-label>
+        <input matInput type="text" placeholder="flatId" formControlName="flatId">
+      </mat-form-field>
+    </div>
+ 
+
+    <div class="row">
+        <mat-form-field appearance="outline">
+        <mat-label>user_Id</mat-label>
+        <input matInput type="number" placeholder="userId" formControlName="userId">
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>final_Price</mat-label>
+        <input matInput type="number" placeholder="finalPrice" formControlName="finalPrice">
+      </mat-form-field>
+    </div>
+
+
+    <div class="row">
+      <mat-form-field appearance="outline">
+        <mat-label>email</mat-label>
+        <input matInput type="text" placeholder="email" formControlName="email">
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>Name</mat-label>
+        <input matInput type="text" placeholder="fullName" formControlName="fullName">
+      </mat-form-field>
+    </div>
+
+    <div class="row">
+        <mat-form-field appearance="outline">
+            <mat-label>phone</mat-label>
+            <input matInput type="text" placeholder="phone"formControlName="phone" >
+          </mat-form-field>
+          <mat-form-field appearance="outline">
+            <mat-label>panNumber</mat-label>
+            <input matInput type="text" placeholder="panNumber" formControlName="panNumber">
+          </mat-form-field>
+        </div>
+
+        
+    <div class="row">
+        <mat-form-field appearance="outline">
+            <mat-label>aadharNumber</mat-label>
+            <input matInput type="text" placeholder="aadharNumber" formControlName="aadharNumber">
+          </mat-form-field>
+        </div>
+        
+
+</div>
+<div mat-dialog-actions>
+    <button mat-raised-button type="submit">submit</button>
+</div>
+</form> -->
+
+
+
+
+<h2 mat-dialog-title class="add-form-title">Book Property</h2>
+<div mat-dialog-content>
+  <form class="add-form" [formGroup]="bookform" (ngSubmit)="onFormSubmit()">
+    
+    <div class="form-row">  
+      <mat-form-field class="row-data" appearance="outline" floatLabel="always">
+        <mat-label>Property ID</mat-label>
+        <input matInput placeholder="Enter property id" formControlName="flatId">
+      </mat-form-field>
+      <mat-form-field class="row-data" appearance="outline" floatLabel="always">
+        <mat-label>User ID</mat-label>
+        <input matInput placeholder="Enter property id" formControlName="userId">
+      </mat-form-field>
+    </div>
+
+    <div class="form-row">
+      <mat-form-field class="row-data" appearance="outline" floatLabel="always">
+        <mat-label>Price</mat-label>
+        <input matInput placeholder="Enter price" formControlName="finalPrice">
+      </mat-form-field>
+      <mat-form-field class="row-data" appearance="outline" floatLabel="auto">
+        <mat-label>Name</mat-label>
+        <input matInput placeholder="Enter full name" formControlName="fullName">
+        <div *ngIf="bookform.controls['fullName'].invalid && (bookform.controls['fullName'].dirty || bookform.controls['fullName'].touched)" class="error-message">
+          <div *ngIf="bookform.controls['fullName'].errors?.['required']">*Name is required</div>
+        </div>
+      </mat-form-field>
+    </div>
+
+    <div class="form-row">
+      <mat-form-field class="row-data" appearance="outline" floatLabel="auto">
+        <mat-label>Email</mat-label>
+        <input matInput placeholder="Enter email" formControlName="email">
+        <div *ngIf="bookform.controls['email'].invalid && (bookform.controls['email'].dirty || bookform.controls['email'].touched)" class="error-message">
+          <div *ngIf="bookform.controls['email'].errors?.['required']">*Email is required</div>
+          <div *ngIf="bookform.controls['email'].errors?.['email']">*Invalid email format</div>
+        </div>
+      </mat-form-field>
+    
+      <mat-form-field class="row-data" appearance="outline" floatLabel="auto">
+        <mat-label>Phone</mat-label>
+        <input matInput placeholder="Enter phone no." formControlName="phone">
+        <div *ngIf="bookform.controls['phone'].invalid && (bookform.controls['phone'].dirty || bookform.controls['phone'].touched)" class="error-message">
+          <div *ngIf="bookform.controls['phone'].errors?.['required']">*Phone number is required</div>
+          <div *ngIf="bookform.controls['phone'].errors?.['pattern']">*Invalid format (10 digits only)</div>
+        </div>
+      </mat-form-field>
+    </div>
+
+    <div class="form-row">
+      <mat-form-field class="row-data" appearance="outline" floatLabel="auto">
+        <mat-label>PAN Number</mat-label>
+        <input matInput placeholder="Enter PAN Number" formControlName="panNumber">
+        <div *ngIf="bookform.controls['panNumber'].invalid && (bookform.controls['panNumber'].dirty || bookform.controls['panNumber'].touched)" class="error-message">
+          <div *ngIf="bookform.controls['panNumber'].errors?.['required']">*PAN is required</div>
+          <div *ngIf="bookform.controls['panNumber'].errors?.['pattern']">*Invalid format (10 characters only)</div>
+        </div>
+      </mat-form-field>
+      <mat-form-field class="row-data" appearance="outline" floatLabel="auto">
+        <mat-label>Aadhar Number</mat-label>
+        <input matInput placeholder="Enter Aadhar Number" formControlName="aadharNumber">
+        <div *ngIf="bookform.controls['aadharNumber'].invalid && (bookform.controls['aadharNumber'].dirty || bookform.controls['aadharNumber'].touched)" class="error-message">
+          <div *ngIf="bookform.controls['aadharNumber'].errors?.['required']">*Aadhar is required</div>
+          <div *ngIf="bookform.controls['aadharNumber'].errors?.['pattern']">*Invalid format (12 digits only)</div>
+        </div>
+      </mat-form-field>
+    </div>
+  </form>
+</div>
+
+<div class="add-action-buttons" mat-dialog-actions>
+  <button class="cancel-button" mat-button (click)="onNoClick()">Cancel</button>
+  <button class="add-button" mat-button color="primary" [disabled]="!bookform.valid" (click)="onFormSubmit()">Book</button>
+</div>

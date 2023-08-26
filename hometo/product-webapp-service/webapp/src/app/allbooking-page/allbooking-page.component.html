@@ -1,0 +1,28 @@
+<div class="booking-heading">
+  <div class="heading-container">
+    <h2 *ngIf="userRole()">All Bookings</h2>
+    <h2>My Bookings</h2>
+  </div> 
+</div>
+
+<div class="booking-list-section">
+  <div class="container">
+    <div class="booking-cards">
+      <div class="booking-card" *ngFor="let booking of bookings">
+        <div class="booking-card-content">
+          <div class="content">
+            <!-- <p><i class="fas fa-tags"></i>Booking ID : {{ booking.bookingId }}</p> -->
+            <p><i class="fas fa-building"></i><span class="bold">Flat ID :</span> {{ booking.flatId }}</p>
+            <p><i class="fa-solid fa-user"></i><span class="bold">User ID :</span> {{booking.userId}}</p>
+            <p><i class="fa fa-inr"></i><span class="bold">Price :</span> {{booking.finalPrice}}</p>
+            <p><i class="fa-solid fa-signature"></i><span class="bold">Name :</span> {{booking.fullName}}</p>
+            <p><i class="fa-solid fa-envelope"></i><span class="bold">Email :</span> {{booking.email}}</p>
+            <p><i class="fa-solid fa-phone"></i><span class="bold">Phone :</span> {{booking.phone}}</p>
+            <p><i class="fa-solid fa-id-badge"></i><span class="bold">PAN Number :</span> {{booking.panNumber}}</p>
+            <p><i class="fa-solid fa-id-card"></i><span class="bold">Aadhar Number :</span> {{booking.aadharNumber}}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

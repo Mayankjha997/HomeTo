@@ -1,0 +1,26 @@
+
+<div class="schedule-container">
+  <div class="schedule-img">
+    <img src="../../assets/schedule.png">
+  </div>
+  <div class="schedule-form-container">
+    <div class="schedule-form">
+      <div class="schedule-form-title">
+        Schedule Your Visit
+      </div>
+      <form class="form-items" [formGroup]="scheduleForm" (ngSubmit)="scheduleVisit()">
+          <mat-form-field class="form-item" appearance="outline" floatLabel="auto">
+            <mat-label>Start Time</mat-label>
+            <input matInput type="datetime-local" formControlName="startTime" required>
+          </mat-form-field>
+    
+          <mat-form-field class="form-item" appearance="outline" floatLabel="auto">
+            <mat-label>End Time</mat-label>
+            <input matInput type="datetime-local" formControlName="endTime" required>
+          </mat-form-field>
+        <button *ngIf="scheduleForm.valid" class="check-button" mat-button type="button" (click)="checkAvailability()">Check Availability</button>
+        <button *ngIf="scheduleForm.valid" class="schedule-button" mat-raised-button type="submit">Schedule Visit</button>
+      </form>
+    </div>
+  </div>
+</div>

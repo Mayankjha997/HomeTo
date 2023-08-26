@@ -1,0 +1,72 @@
+<h2 mat-dialog-title class="update-form-title">Edit Property Details</h2>
+<div mat-dialog-content>
+  <form class="update-form" [formGroup]="updatePropertyForm">
+    <div class="form-row">  
+      <mat-form-field class="row-data" appearance="outline" floatLabel="auto">
+        <mat-label>Property Name</mat-label>
+        <input matInput placeholder="Enter Property Name" formControlName="propertyName">
+        <div *ngIf="updatePropertyForm.controls['propertyName'].invalid && (updatePropertyForm.controls['propertyName'].dirty || updatePropertyForm.controls['propertyName'].touched)" class="error-message">
+          <div *ngIf="updatePropertyForm.controls['propertyName'].errors?.['required']">*Property name is required</div>
+        </div>
+      </mat-form-field>
+      <mat-form-field class="row-data" appearance="outline" floatLabel="auto">
+        <mat-label>Property Type</mat-label>
+        <mat-select placeholder="Select Type" formControlName="propertyType">
+          <mat-option value="Apartment">Apartment</mat-option>
+          <mat-option value="Flat">Flat</mat-option>
+          <mat-option value="House">House</mat-option>
+          <mat-option value="Bungalow">Bungalow</mat-option>
+          <mat-option value="Plot">Plot</mat-option>
+        </mat-select>
+        <div *ngIf="updatePropertyForm.controls['propertyType'].invalid && (updatePropertyForm.controls['propertyType'].dirty || updatePropertyForm.controls['propertyType'].touched)" class="error-message">
+          <div *ngIf="updatePropertyForm.controls['propertyType'].errors?.['required']">*Type is required</div>
+        </div>
+      </mat-form-field>
+    </div>
+
+    <div class="form-row">
+      <mat-form-field class="row-data" appearance="outline" floatLabel="auto">
+        <mat-label>Address</mat-label>
+        <textarea matInput placeholder="Enter Address" formControlName="address"></textarea>
+        <div *ngIf="updatePropertyForm.controls['address'].invalid && (updatePropertyForm.controls['address'].dirty || updatePropertyForm.controls['address'].touched)" class="error-message">
+          <div *ngIf="updatePropertyForm.controls['address'].errors?.['required']">*Address is required</div>
+        </div>
+      </mat-form-field>
+    </div>
+
+    <div class="form-row">
+      <mat-form-field class="row-data" appearance="outline" floatLabel="auto">
+        <mat-label>Amenities</mat-label>
+        <input matInput placeholder="Enter Amenities" formControlName="amenities">
+        <div *ngIf="updatePropertyForm.controls['amenities'].invalid && (updatePropertyForm.controls['amenities'].dirty || updatePropertyForm.controls['amenities'].touched)" class="error-message">
+          <div *ngIf="updatePropertyForm.controls['amenities'].errors?.['required']">*Address is required</div>
+        </div>
+      </mat-form-field>
+    
+      <mat-form-field class="row-data" appearance="outline" floatLabel="auto">
+        <mat-label>Price</mat-label>
+        <span matPrefix>&nbsp;Rs.&nbsp;</span>
+        <input matInput type="number" placeholder="0" formControlName="price">
+        <span matSuffix>.00&nbsp;</span>
+        <div *ngIf="updatePropertyForm.controls['price'].invalid && (updatePropertyForm.controls['price'].dirty || updatePropertyForm.controls['price'].touched)" class="error-message">
+          <div *ngIf="updatePropertyForm.controls['price'].errors?.['required']">*Price is required</div>
+        </div>
+      </mat-form-field>
+    </div>
+
+    <div class="form-row">
+      <mat-form-field class="row-data" appearance="outline" floatLabel="auto">
+        <mat-label>Description</mat-label>
+        <textarea matInput placeholder="Give Description" formControlName="description"></textarea>
+        <div *ngIf="updatePropertyForm.controls['description'].invalid && (updatePropertyForm.controls['description'].dirty || updatePropertyForm.controls['description'].touched)" class="error-message">
+          <div *ngIf="updatePropertyForm.controls['description'].errors?.['required']">*Description is required</div>
+        </div>
+      </mat-form-field>
+    </div>
+  </form>
+</div>
+<div mat-dialog-actions class="update-action-buttons">
+  <button class="cancel-button" mat-button (click)="onNoClick()">Cancel</button>
+  <button class="save-button" mat-button color="primary" [disabled]="!updatePropertyForm.valid" (click)="onSubmit()">Save</button>
+</div>
+

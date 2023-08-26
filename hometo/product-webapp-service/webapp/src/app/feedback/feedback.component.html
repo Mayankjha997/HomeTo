@@ -1,0 +1,97 @@
+<!-- <hr>
+<h2>Feedback Section</h2>
+<hr>
+<form [formGroup]="feedbackForm" (ngSubmit)="onSubmit()" class="feedback-form">
+ 
+    <h1> Enter your valuable feedbacks :</h1>
+    <div mat-dialog-content class="form-container">
+      <div class="row">
+        <mat-form-field appearance="outline">
+          <mat-label>Name :</mat-label>
+          <input matInput type="text" placeholder="enter name" formControlName="name">
+        </mat-form-field>
+      
+        <mat-form-field appearance="outline">
+          <mat-label>Email :</mat-label>
+          <input matInput type="text" placeholder="enter email" formControlName="email">
+        </mat-form-field>
+  
+        <mat-form-field appearance="outline">
+          <mat-label>Phone Number :</mat-label>
+          <input matInput type="text" placeholder="enter phoneNo" formControlName="phone">
+        </mat-form-field>
+      </div>
+  
+    
+      <div class="row">
+        <mat-form-field appearance="outline">
+          <mat-label>Rating :</mat-label>
+          <input matInput type="text" placeholder="enter rating" formControlName="Rating">
+        </mat-form-field>
+  
+        <mat-form-field appearance="outline">
+          <mat-label>AdditionalComments :</mat-label>
+          <input matInput type="text" placeholder="enter comments" formControlName="additionalComments">
+       </mat-form-field>
+  
+      </div>
+    </div>
+      
+  <div mat-dialog-actions>
+      <button mat-raised-button type="submit"><strong>SEND</strong></button>
+  </div>
+  
+  </form> -->
+
+<div class="feedback-header">
+  <p>Feedback Section</p>
+  <button mat-raised-button class="all-feed-button" (click)="openFeedbacks()"><strong>All feedbacks</strong></button>
+</div>
+
+<form [formGroup]="feedbackForm" (ngSubmit)="onSubmit()" class="feedback-form">
+  <h1>Give your valuable feedbacks :</h1>
+  <div class="form-container">
+    <div class="row">
+      <mat-form-field appearance="outline">
+        <mat-label>Email</mat-label>
+        <input matInput type="email" placeholder="Enter email" formControlName="custemail">
+        <div *ngIf="feedbackForm.controls['custemail'].invalid && (feedbackForm.controls['custemail'].dirty || feedbackForm.controls['custemail'].touched)" class="error-message">
+          <div *ngIf="feedbackForm.controls['custemail'].errors?.['required']">*Email is required</div>
+          <div *ngIf="feedbackForm.controls['custemail'].errors?.['email']">*Invalid email format</div>
+        </div>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Name</mat-label>
+        <input matInput type="text" placeholder="Enter name" formControlName="name">
+        <div *ngIf="feedbackForm.controls['name'].invalid && (feedbackForm.controls['name'].dirty || feedbackForm.controls['name'].touched)" class="error-message">
+          <div *ngIf="feedbackForm.controls['name'].errors?.['required']">*Name is required</div>
+        </div>
+      </mat-form-field>
+    </div>
+
+    <div class="row">
+      <mat-form-field appearance="outline">
+        <mat-label>Rating</mat-label>
+        <input matInput type="number" min="1" max="5" placeholder="Enter rating" formControlName="rating">
+          <div *ngIf="feedbackForm.controls['rating'].invalid && (feedbackForm.controls['rating'].dirty || feedbackForm.controls['rating'].touched)" class="error-message">
+            <div *ngIf="feedbackForm.controls['rating'].errors?.['min']">*At least 1</div>
+            <div *ngIf="feedbackForm.controls['rating'].errors?.['max']">*At most 5</div>
+            <div *ngIf="feedbackForm.controls['rating'].errors?.['required']">*Rating is required</div>
+        </div>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Additional Comments</mat-label>
+        <textarea matInput placeholder="Enter comments" formControlName="comments"></textarea>
+        <div *ngIf="feedbackForm.controls['comments'].invalid && (feedbackForm.controls['comments'].dirty || feedbackForm.controls['comments'].touched)" class="error-message">
+          <div *ngIf="feedbackForm.controls['comments'].errors?.['required']">*Comment is required</div>
+        </div>
+      </mat-form-field>
+    </div>
+  </div>
+
+  <div mat-dialog-actions>
+    <button mat-raised-button class="send-button" type="submit"><strong>SEND</strong></button>
+  </div>
+</form>

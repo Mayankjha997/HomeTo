@@ -1,0 +1,181 @@
+<!-- <div mat-dialog-title>
+    <h1>Registration Form</h1>
+</div>
+
+<form [formGroup]="registerationform" (ngSubmit)="onFormSubmit()">
+<div mat-dialog-content class="form-container">
+    <div class="row">
+        <mat-form-field appearance="outline">
+        <mat-label>Email</mat-label>
+        <input matInput type="text" placeholder="email" formControlName="email">
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>Password</mat-label>
+        <input matInput type="text" placeholder="password" formControlName="password">
+      </mat-form-field>
+    </div>
+ 
+
+    <div class="row">
+        <mat-form-field appearance="outline">
+        <mat-label>Registering As</mat-label>
+        <input matInput type="text" placeholder="Buyer/Owner" formControlName="role">
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>Phone Number</mat-label>
+        <input matInput type="text" placeholder="number" formControlName="number">
+      </mat-form-field>
+    </div>
+
+
+    <div class="row">
+        <mat-form-field appearance="outline">
+        <mat-label>Name</mat-label>
+        <input matInput type="text" placeholder="First Name" formControlName="firstName">
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>Name</mat-label>
+        <input matInput type="text" placeholder="Last Name" formControlName="lastName">
+      </mat-form-field>
+    </div>
+
+    <div class="row">
+        <mat-form-field appearance="outline">
+            <mat-label>Address</mat-label>
+            <input matInput type="text" placeholder="address"formControlName="address" >
+          </mat-form-field>
+          <mat-form-field appearance="outline">
+            <mat-label>Date Of Birth</mat-label>
+            <input matInput type="text" placeholder="ex:- 03/09/1999" formControlName="dob">
+          </mat-form-field>
+        </div>
+
+</div>
+<div mat-dialog-actions>
+    <button mat-raised-button type="submit">submit</button>
+</div>
+</form> -->
+
+
+<!-- <div class="container">
+  <div class="card">
+    <div class="card-body">
+      <h2 class="logo-title">Register</h2>
+  <form (ngSubmit)="onRegister()">
+    <div class="form-group">
+      <label for="name">name:</label>
+      <input type="text" id="name" name="name" [(ngModel)]="user.name" class="form-control" required>
+    </div>
+    <div class="form-group">
+      <label for="password">password:</label>
+      <input type="password" id="password" name="password" [(ngModel)]="user.password" class="form-control" required>
+    </div>
+    <div class="form-group">
+      <label for="confirmPassword">confirmPassword:</label>
+      <input type="password" id="confirmPassword" name="confirmPassword" [(ngModel)]="user.confirmPassword" class="form-control" required>
+    </div>
+  </form>
+</div>
+</div>
+
+
+<div class="card">
+  <div class="card-body">
+    <h2 class="logo-title">Register (cont.)</h2>
+    <form (ngSubmit)="onRegister()">
+
+    <div class="form-group">
+      <label for="emailId">Email:</label>
+      <input type="email" id="email" name="email" [(ngModel)]="user.email" class="form-control" required>
+    </div>
+    <div class="form-group">
+      <label for="mobileNo">phoneNumber:</label>
+      <input type="text" id="phoneNumber" name="phoneNumber" [(ngModel)]="user.phoneNumber" class="form-control" required>
+    </div>
+    <div class="form-group">
+      <label for="userRole">User Role:</label>
+      <select id="role" name="role" [(ngModel)]="user.role" class="form-control" required>
+        <option value="OWNER">OWNER</option>
+        <option value="BUYER">BUYER</option>
+      </select>
+    </div>
+    <button type="submit" class="btn btn-primary">Register</button>
+  </form>
+</div>
+</div>
+</div> -->
+
+<div class="login-cont">
+  <div class="image-cont">
+    <img src="../../assets/signup.png">
+  </div>
+  <div class="login-form">
+    <div class="welcome">
+      WELCOME
+    </div>
+    <div class="login">
+      Sign up
+    </div>
+    <div class="form-cont">
+      <form (ngSubmit)="onRegister()" #registerForm="ngForm">
+        <div class="form-item">
+          <!-- <label for="name">NAME :</label> -->
+          <input placeholder="Enter full name" type="text" id="name" name="name" [(ngModel)]="user.name" #name="ngModel" required>
+          <div *ngIf="name.invalid && (name.dirty || name.touched)" class="error-message">
+            <div *ngIf="name.errors?.['required']">*Name is required</div>
+          </div>
+        </div>
+        <div class="form-item">
+          <!-- <label for="emailId">EMAIL :</label> -->
+          <input placeholder="Enter email" type="email" id="email" name="email" [(ngModel)]="user.email" #email="ngModel" required pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$">
+          <div *ngIf="email.invalid && (email.dirty || email.touched)" class="error-message">
+            <div *ngIf="email.errors?.['required']">*Email is required</div>
+            <div *ngIf="email.errors?.['pattern']">*Invalid email format</div>
+          </div>
+        </div>
+        <div class="form-item">
+          <!-- <label for="password">PASSWORD :</label> -->
+          <input placeholder="Enter password" type="password" id="password" name="password" [(ngModel)]="user.password" #password="ngModel" minlength="6" required>
+          <div *ngIf="password.invalid && (password.dirty || password.touched)" class="error-message">
+            <div *ngIf="password.errors?.['required']">*Password is required</div>
+            <div *ngIf="password.errors?.['minlength']">*At least 6 characters required</div>
+          </div>
+        </div>
+        <div class="form-item">
+          <!-- <label for="confirmPassword">CONFIRM PASSWORD :</label> -->
+          <input placeholder="Confirm password" type="password" id="confirmPassword" name="confirmPassword" [(ngModel)]="user.confirmPassword" #confirmPassword="ngModel" required pattern="{{user.password}}">
+          <div *ngIf="confirmPassword.invalid && (confirmPassword.dirty || confirmPassword.touched)" class="error-message">
+            <div *ngIf="confirmPassword.errors?.['required']">*Confirm password is required</div>
+            <div *ngIf="confirmPassword.errors?.['pattern']">*Password do not match</div>
+          </div>
+        </div>
+
+        <div class="form-item">
+          <!-- <label for="mobileNo">PHONE NO. :</label> -->
+          <input placeholder="Enter phone number" type="text" id="phoneNumber" name="phoneNumber" [(ngModel)]="user.phoneNumber"#phone="ngModel" required pattern="^[0-9]{10}$">
+          <div *ngIf="phone.invalid && (phone.dirty || phone.touched)" class="error-message">
+            <div *ngIf="phone.errors?.['required']">*Phone number is required</div>
+            <div *ngIf="phone.errors?.['pattern']">*Invalid format (10 digits only)</div>
+          </div>
+        </div>
+        <div class="form-item">
+          <!-- <label for="userRole">USER ROLE :</label> -->
+          <select id="role" name="role" [(ngModel)]="user.role" #role="ngModel" required>
+            <option value="" disabled>Select role</option>
+            <option value="OWNER">OWNER</option>
+            <option value="BUYER">BUYER</option>
+          </select>
+          <div *ngIf="role.invalid && (role.dirty || role.touched)" class="error-message">
+            <div *ngIf="role.errors?.['required']">*Role is required</div>
+          </div>
+        </div>
+        <div class="form-item">
+          <button type="submit" class="btn btn-primary" [disabled]="registerForm.invalid">Sign up</button>
+        </div>
+        <div class="form-item">
+          <p class="register-link">Already a member? <a routerLink="/login">Sign in</a></p>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

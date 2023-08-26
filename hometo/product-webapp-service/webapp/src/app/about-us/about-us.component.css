@@ -1,0 +1,164 @@
+/* Basic Responsive Styling */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+  
+  .about-section {
+    padding: 80px 0;
+    text-align: center;
+    background-color: #f4f4f4;
+  }
+  
+  .about-section h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+  }
+  
+  .about-section p {
+    font-size: 18px;
+    line-height: 1.6;
+    text-align: justify;
+  }
+  
+  /* Media Queries for Responsive Design */
+  @media screen and (max-width: 768px) {
+    .about-section {
+      padding: 60px 0;
+    }
+  
+    .about-section h2 {
+      font-size: 24px;
+    }
+  
+    .about-section p {
+      font-size: 16px;
+    }
+  }
+    
+  .meet-our-team-section {
+    padding: 80px 0;
+    text-align: center;
+  }
+  
+  .meet-our-team-section h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+  }
+
+  .team-members {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  
+  .team-member {
+    flex: 1 1 calc(33.33% - 20px);
+    max-width: calc(33.33% - 20px);
+    margin: 10px;
+    border-radius: 8px;
+    background-color: #f4f4f4;
+  }
+  
+  .team-member img {
+    max-width: 100%;
+  }
+  
+  .team-member h3 {
+    margin-top: 10px;
+    font-size: 20px;
+  }
+  
+  .social-links {
+    display: flex;
+    justify-content: right;
+  }
+  
+  .social-links a {
+    color: black;
+    font-size: 24px;
+    margin: 8px;
+    transition: color 0.3s ease-in-out;
+  }
+  
+  .social-links a:hover {
+    color: #3BBF44;
+  }
+
+  /* Media Queries for Responsive Design */
+  @media screen and (max-width: 768px) {
+    .meet-our-team-section {
+      padding: 60px 0;
+    }
+
+    .meet-our-team-section h2 {
+        font-size: 24px;
+      }
+  
+    .team-member {
+      flex: 1 1 calc(50% - 20px);
+      max-width: calc(50% - 20px);
+    }
+    .team-member h3 {
+        font-size: 18px;
+    }
+    .team-member {
+        font-size: 18;
+    }
+    .social-links {
+        justify-content: center;
+    }
+    .social-links a {
+        font-size: 18px;
+    }
+  }
+
+  /* Basic Responsive Styling */
+.contact-us-section {
+    padding: 80px 0;
+    text-align: center;
+    background-color: #f4f4f4;
+  }
+  
+  .contact-us-section h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+  }
+  
+  .contact-us-section p {
+    font-size: 18px;
+    line-height: 1.6;
+  }
+  
+  .contact-form {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  
+  /* Media Queries for Responsive Design */
+  @media screen and (max-width: 768px) {
+    .contact-us-section {
+      padding: 60px 0;
+    }
+  
+    .contact-us-section h2 {
+      font-size: 24px;
+    }
+  
+    .contact-us-section p {
+      font-size: 16px;
+    }
+  }
+
+  .mail-button {
+    border: solid;
+    color: #3BBF44 !important;
+  }
+
+  .mail-button:hover {
+    background-color: #3BBF44;
+    color: white !important;
+    border-color: #3BBF44;
+  }
+  

@@ -1,0 +1,96 @@
+.header {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    background-color: black;
+    padding: 5px 10px;
+    /* top: 0;
+    position: fixed;
+    width: 100%; */
+  }
+  
+  .logo-container {
+    display: flex;
+    margin: 0 10px;
+  }
+  
+  .logo {
+    max-width:100px ;
+  }
+  
+  .buttons-container {
+    display: flex;
+    align-items: center;
+    margin: 0 10px;
+    gap: 10px;
+  }
+
+  .buttons-container button {
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+  }
+  
+  .signin-button {
+    border: 2px solid #3BBF44;
+    border-radius: 4px;
+    background-color: white;
+    color:#3BBF44 !important;
+  }
+
+  .signup-button {
+    border: 2px solid #3BBF44;
+    border-radius: 4px;
+    background-color: #3BBF44 !important;
+    color: white !important;
+  }
+  
+  .signin-button:hover {
+    background-color: #3BBF44;
+    border-color: white;
+    color: white !important;
+  }
+
+  .signup-button:hover {
+    border-color: white;
+  }
+
+  .profile-icon {
+    color: white;
+    font-size: 30px;
+    cursor: pointer;
+  }
+
+  .profile-icon:hover {
+    color: #3BBF44;
+  }
+
+  .custom-menu-item:hover {
+  color: white;
+  background-color: #3BBF44 !important;
+}
+
+@media screen and (max-width:768px) {
+  .logo {
+    max-width: 80px;
+  }
+
+  .buttons-container button {
+    font-size: 12px;
+  }
+
+  .logo-container {
+    margin: 0 5px;
+  }
+
+  .buttons-container {
+    margin: 0 5px;
+  }
+
+  .profile-icon{
+    font-size: 24px;
+  }
+}
+
+  
+  

@@ -1,0 +1,37 @@
+<div class="property-container"> 
+    <div class="property">
+        <div class="img-container"> 
+            <img src="assets/img1.jpeg">
+        </div>
+        <div class="content-container">
+            <h2>{{property.propertyName}}</h2>
+            <table class="property-description-table">
+                <tr>
+                    <td class="icon"><i class="fas fa-building"></i></td>
+                    <td><p>{{property.propertyType}}</p></td>
+                </tr>
+                <tr>
+                    <td class="icon"><i class="fas fa-map-marker-alt"></i></td>
+                    <td><p>{{property.address}}</p></td>
+                </tr>
+                <tr>
+                    <td class="icon"><i class="fa fa-inr"></i></td>
+                    <td><p>{{property.price}}</p></td>
+                </tr>
+                <tr>
+                    <td class="icon"><i class="fa fa-clipboard"></i></td>
+                    <td><p>{{property.amenities}}</p></td>
+                </tr>
+                <tr>
+                    <td class="icon"><i class="fas fa-info"></i></td>
+                    <td><p>{{property.description}}</p></td>
+                </tr>
+            </table>
+            <span class="vertical-spacer"></span>
+            <div class="book-schedule-buttons">
+                <button *ngIf="!userRole()" mat-raised-button class="book-button" (click)="openBookForm()">Book</button>
+                <button *ngIf="!userRole()" mat-raised-button class="schedule-button" (click)="openSchedulePage()">Schedule visit</button>
+            </div>
+        </div>
+    </div>
+</div>

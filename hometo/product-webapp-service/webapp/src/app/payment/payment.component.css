@@ -1,0 +1,169 @@
+/* .Container{ */
+    /* background-image: url('../../assets/onlinepayment.jpg'); */
+    /* background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 100%;
+    height: 100%;  
+    display: flex;
+   align-items: center  ;
+   justify-content: center;
+   display:flex;
+  }
+  .form-container {
+    background-color: #cdc9c9; */
+    /* margin: 100px auto; */
+    /* border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    padding: 50px;
+    width: 450px;
+    
+    text-align: center;
+  }
+  .form-title {
+    font-size: 42px;
+    margin-bottom: 25px;
+    
+    color: #333;
+  }
+  .form-input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+  }
+  .form-input:focus {
+    border-color: #1fbc5e;
+  }
+  .submit-button {
+    background-color: #9ab31d;
+    color: #1e1b1b;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  .submit-button:hover {
+    background-color: #0056b3;
+  } */
+
+
+
+
+  .payment-container {
+    max-width: 1200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    margin: 0 auto;
+  }
+
+  .payment-img {
+    display: flex;
+    width: 550px;
+    height: 550px;
+  }
+  
+  .payment-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    padding: 20px;
+    background-color: #92E3A9;
+    text-align: center;
+  }
+
+  .payment-title {
+    width: 100%;
+    padding: 20px 0;
+    font-size: 32px;
+  }
+
+  .payment-desc {
+    width: 100%;
+    padding: 20px 10px;
+    font-size: 20px;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight: 450;
+    line-height: 30px;
+  }
+
+  .payment-amount {
+    width: 100%;
+    border-radius: 8px;
+    padding: 20px 0;
+    background-color: white;
+  }
+
+  .note {
+    font-size: 16px;
+    color:#00438a;
+    margin-bottom: 10px;
+  }
+
+  .amount {
+    font-size: 28px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color:#0056b3;
+    
+  }
+
+  .pay-button {
+    /* width: 100%; */
+    padding: 20px;
+  }
+
+  .payment-info {
+    /* color:  #0056b3; */
+    color: blue;
+    margin-top: 30px;
+    margin-bottom:5px;
+  }
+
+  .pay-button {
+    border: 2px solid black;
+    background-color: black;
+    color: white;
+  }
+
+  .pay-button:hover {
+    border: 2px solid #3BBF44;
+    color: #3BBF44;
+  }
+
+@media screen and (max-width:1000px){
+  .payment-title {
+    font-size: 30px;
+  }
+  
+  .payment-img {
+    height: 450px;
+    height: 450px;
+    margin-left: 20px;
+  }
+
+  .payment-content {
+    margin-right: 20px;
+  }
+
+  .payment-container {
+    margin: 60px 20px;
+  }
+
+}
+
+@media screen and (max-width: 850px){
+  .payment-img {
+    height: 400px;
+    width: 400px;
+  }
+}
+  
+
+  

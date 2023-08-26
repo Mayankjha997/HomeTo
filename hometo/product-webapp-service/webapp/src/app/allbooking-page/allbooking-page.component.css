@@ -1,0 +1,159 @@
+/* .container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  h2 {
+    margin-bottom: 20px;
+    font-size: 24px;
+  }
+  
+  .table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+  }
+  
+  .table th,
+  .table td {
+    border: 1px solid #e0e0e0;
+    padding: 10px;
+    text-align: left;
+  }
+  
+  .table th {
+    background-color: #f0f0f0;
+  }
+  
+  .table tr:nth-child(even) {
+    background-color: #f9f9f9;
+  }
+  
+  .table tr:hover {
+    background-color: #f0f0f0;
+  }
+   */
+
+   .booking-heading{
+    padding: 20px 0;
+    border-bottom: 1px solid #3BBF44;
+  }
+  
+  .heading-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+  
+  .booking-list-section {
+    padding: 80px 0;
+  }
+  
+  .booking-cards {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  
+  .booking-card {
+    flex: 1 1 calc(33.33% - 32px);
+    max-width: calc(33.33% - 32px);
+    margin: 10px;
+    border-radius: 8px;
+    background-color: black;
+    overflow: hidden;
+    border: 1px solid;
+    color: white;
+    padding: 20px;
+  }
+  
+  .booking-card-content {
+    display: flex;
+    padding: 0 20px;
+    justify-content: space-between;
+  }
+  
+  .content {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  
+  .content p {
+    font-size: 16px;
+  }
+
+  .bold {
+    font-weight: bold;
+  }
+  
+  .content i {
+    color: black;
+    background-color: #3BBF44;
+    border-radius: 8px;
+    padding: 8px;
+    margin-right: 10px;
+  }
+  
+  @media screen and  (max-width: 768px) {
+    .booking-list-section {
+      padding: 80px 0;
+    }
+  
+    .booking-card {
+      flex: 1 1 calc(50% - 20px);
+      max-width: calc(50% - 20px);
+    }
+  
+    .booking-card-content p {
+      font-size: 14px;
+    }
+  }
+
+
+
+
+
+  
+  .table-container {
+    max-height: 400px; /* Adjust the height as needed */
+    overflow: auto;
+  }
+  
+  .table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    white-space: nowrap; /* Prevent text wrapping in cells */
+  }
+  
+  .table th,
+  .table td {
+    border: 1px solid #e0e0e0;
+    padding: 10px;
+    text-align: left;
+  }
+  
+  .table th {
+    background-color: #f0f0f0;
+  }
+  
+  .table tr:nth-child(even) {
+    background-color: #f9f9f9;
+  }
+  
+  .table tr:hover {
+    background-color: #f0f0f0;
+  }
+  
+  

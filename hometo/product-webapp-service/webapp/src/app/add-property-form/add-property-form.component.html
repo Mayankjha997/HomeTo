@@ -1,0 +1,80 @@
+<h2 mat-dialog-title class="add-form-title">Add New Property</h2>
+<div mat-dialog-content>
+  <form class="add-form" [formGroup]="addPropertyForm" (ngSubmit)="onSubmit()">
+    
+    <div class="form-row">  
+      <mat-form-field class="row-data" appearance="outline" floatLabel="auto">
+        <mat-label>Property Name</mat-label>
+        <input matInput placeholder="Enter Property Name" formControlName="propertyName">
+        <div *ngIf="addPropertyForm.controls['propertyName'].invalid && (addPropertyForm.controls['propertyName'].dirty || addPropertyForm.controls['propertyName'].touched)" class="error-message">
+          <div *ngIf="addPropertyForm.controls['propertyName'].errors?.['required']">*Property name is required</div>
+        </div>
+      </mat-form-field>
+      <mat-form-field class="row-data" appearance="outline" floatLabel="auto">
+        <mat-label>Property Type</mat-label>
+        <mat-select placeholder="Select Type" formControlName="propertyType">
+          <mat-option value="Apartment">Apartment</mat-option>
+          <mat-option value="Flat">Flat</mat-option>
+          <mat-option value="House">House</mat-option>
+          <mat-option value="Bungalow">Bungalow</mat-option>
+          <mat-option value="Plot">Plot</mat-option>
+        </mat-select>
+        <div *ngIf="addPropertyForm.controls['propertyType'].invalid && (addPropertyForm.controls['propertyType'].dirty || addPropertyForm.controls['propertyType'].touched)" class="error-message">
+          <div *ngIf="addPropertyForm.controls['propertyType'].errors?.['required']">*Type is required</div>
+        </div>
+      </mat-form-field>
+    </div>
+
+    <div class="form-row">
+      <mat-form-field class="row-data" appearance="outline" floatLabel="auto">
+        <mat-label>Address</mat-label>
+        <textarea matInput placeholder="Enter Address" formControlName="address"></textarea>
+        <div *ngIf="addPropertyForm.controls['address'].invalid && (addPropertyForm.controls['address'].dirty || addPropertyForm.controls['address'].touched)" class="error-message">
+          <div *ngIf="addPropertyForm.controls['address'].errors?.['required']">*Address is required</div>
+        </div>
+      </mat-form-field>
+    </div>
+
+    <div class="form-row">
+      <mat-form-field class="row-data" appearance="outline" floatLabel="auto">
+        <mat-label>Amenities</mat-label>
+        <input matInput placeholder="Enter Amenities" formControlName="amenities">
+        <div *ngIf="addPropertyForm.controls['amenities'].invalid && (addPropertyForm.controls['amenities'].dirty || addPropertyForm.controls['amenities'].touched)" class="error-message">
+          <div *ngIf="addPropertyForm.controls['amenities'].errors?.['required']">*Address is required</div>
+        </div>
+      </mat-form-field>
+    
+      <mat-form-field class="row-data" appearance="outline" floatLabel="auto">
+        <mat-label>Price</mat-label>
+        <span matPrefix>&nbsp;Rs.&nbsp;</span>
+        <input matInput type="number" placeholder="0" formControlName="price">
+        <span matSuffix>.00&nbsp;</span>
+        <div *ngIf="addPropertyForm.controls['price'].invalid && (addPropertyForm.controls['price'].dirty || addPropertyForm.controls['price'].touched)" class="error-message">
+          <div *ngIf="addPropertyForm.controls['price'].errors?.['required']">*Price is required</div>
+        </div>
+      </mat-form-field>
+    </div>
+
+    <div class="form-row">
+      <mat-form-field class="row-data" appearance="outline" floatLabel="auto">
+        <mat-label>Description</mat-label>
+        <textarea matInput placeholder="Give Description" formControlName="description"></textarea>
+        <div *ngIf="addPropertyForm.controls['description'].invalid && (addPropertyForm.controls['description'].dirty || addPropertyForm.controls['description'].touched)" class="error-message">
+          <div *ngIf="addPropertyForm.controls['description'].errors?.['required']">*Description is required</div>
+        </div>
+      </mat-form-field>
+    </div>
+    <!-- <div class="form-row">
+      <mat-form-field class="row-data" appearance="outline" floatLabel="always">
+        <mat-label>Upload Image</mat-label>
+        <input type="file" (change)="onFileSelected($event)" accept=".jpg, .png, .jpeg" required>
+        <button (click)="uploadImage()">upload</button>
+      </mat-form-field>
+    </div> -->
+  </form>
+
+</div>
+<div class="add-action-buttons" mat-dialog-actions>
+  <button class="cancel-button" mat-button (click)="onNoClick()">Cancel</button>
+  <button class="add-button" mat-button color="primary" [disabled]="!addPropertyForm.valid" (click)="onSubmit()">Add</button>
+</div>
